@@ -1,6 +1,6 @@
 {
     "files.exclude": {
-        "**/machine_learning_examples-master": true
+        // "**/machine_learning_examples-master": true
     },
     "search.exclude": {
         "**/machine_learning_examples-master": true
