@@ -20,6 +20,8 @@ Bayes Test/                    # Jupyter notebooks demonstrating use cases
                                # Imports .py modules from machine_learning_examples-master
 machine_learning_examples-master/  # Reusable Python modules (.py files)
                                # Hidden from search but imported by Bayes Test notebooks
+font/                          # Thai font files (Prompt font family)
+                               # Used for matplotlib Thai language rendering
 .github/instructions/          # AI agent behavior rules
 ```
 
@@ -42,6 +44,7 @@ machine_learning_examples-master/  # Reusable Python modules (.py files)
    - **Context**: Always include file header with author, date, purpose (see `bayes algorithm.instruction.md`)
    - **Pattern**: Import Python modules → Demonstrate use case → Explain with comments
    - **Comments**: Explain WHY, not just WHAT—this is for learning
+   - **Thai Font Setup**: Always configure matplotlib to use Thai fonts from `font/` directory (see Font Configuration Pattern below)
 
 3. **Expert Guidelines** (`.github/instructions/stack.instructions.md`)
    - **Audience**: AI agents and advanced practitioners
@@ -138,6 +141,41 @@ from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
+
+### Font Configuration Pattern (for Thai Language Support)
+
+**CRITICAL**: All notebooks with matplotlib visualizations containing Thai text MUST configure fonts properly to avoid displaying squares instead of Thai characters.
+
+**Standard font setup for `Bayes Test/` notebooks**:
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+# Load and register Thai font from font/ directory
+font_path = '../../font/Prompt/Prompt-Regular.ttf'  # Adjust path based on notebook location
+font_prop = fm.FontProperties(fname=font_path)
+
+# Register font with matplotlib
+fm.fontManager.addfont(font_path)
+font_name = font_prop.get_name()
+
+# Configure matplotlib to use the Thai font
+plt.rcParams['font.family'] = font_name
+plt.rcParams['axes.unicode_minus'] = False  # Fix minus sign display issue
+
+print(f"✅ ตั้งค่า Font ภาษาไทยเป็น '{font_name}' เรียบร้อย")
+```
+
+**Path adjustments by notebook location**:
+- `Bayes Test/ab_testing/*.ipynb` → use `'../../font/Prompt/Prompt-Regular.ttf'`
+- `Bayes Test/*.ipynb` → use `'../font/Prompt/Prompt-Regular.ttf'`
+
+**Key points**:
+- Use `fm.fontManager.addfont()` to register the font file - this is essential
+- Use `Prompt-Regular.ttf` for readability in graphs (not Bold or Black variants)
+- Always include this setup BEFORE any plotting code
+- Place in the imports cell at the beginning of the notebook
 
 ### Code Comment Philosophy
 
