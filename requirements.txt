@@ -1,0 +1,21 @@
+# Dependencies for Bayes Test Notebooks
+# Python 3.13.1
+
+# Core Scientific Computing
+numpy>=1.26.0
+pandas>=2.1.0
+scipy>=1.11.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Machine Learning (Optional - if needed for other notebooks)
+scikit-learn>=1.3.0
+
+# Jupyter Notebook Support
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+
+# Additional utilities
+tqdm>=4.66.0
