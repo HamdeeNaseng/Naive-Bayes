@@ -207,3 +207,4 @@ marimo/_lsp/
 __marimo__/
 Bayes Test/gaussian naive bayes/creditcard.csv
 Bayes Test/gaussian naive bayes/dna.csv
+Bayes Test/gaussian naive bayes/diabetes.csv
