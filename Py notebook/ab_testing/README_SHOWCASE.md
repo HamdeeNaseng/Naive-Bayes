@@ -204,7 +204,7 @@ After going through the showcase, you will understand:
 
 ## 🚀 Quick Start
 
-1. **Open Notebook**: `Bayes Test/ab_testing/ab_testing.ipynb`
+1. **Open Notebook**: `Py notebook/ab_testing/ab_testing.ipynb`
 
 2. **Run All Cells**: Execute cells sequentially
 

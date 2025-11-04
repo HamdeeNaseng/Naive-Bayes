@@ -16,10 +16,10 @@ notes/                          # Core learning workspace
 ├── resources/                 # Curated learning materials
 └── daily-logs/                # Progress tracking and reflections
 
-Bayes Test/                    # Jupyter notebooks demonstrating use cases
+Py notebook/                    # Jupyter notebooks demonstrating use cases
                                # Imports .py modules from machine_learning_examples-master
 machine_learning_examples-master/  # Reusable Python modules (.py files)
-                               # Hidden from search but imported by Bayes Test notebooks
+                               # Hidden from search but imported by Py notebook notebooks
 font/                          # Thai font files (Prompt font family)
                                # Used for matplotlib Thai language rendering
 .github/instructions/          # AI agent behavior rules
@@ -38,7 +38,7 @@ font/                          # Thai font files (Prompt font family)
    - **Reference**: See `.github/instructions/learn.instructions.md` for full guidelines
    - Example: "Think of probability like weather forecasting! ☔"
 
-2. **Technical Implementation** (`Bayes Test/**`)
+2. **Technical Implementation** (`Py notebook/**`)
    - **Format**: Jupyter notebooks (.ipynb) that import from `machine_learning_examples-master/`
    - **Language**: Thai and English mixed (preserve existing language)
    - **Context**: Always include file header with author, date, purpose (see `bayes algorithm.instruction.md`)
@@ -91,13 +91,13 @@ This repository has **no automated testing or build pipelines**. Instead:
 ### The "machine_learning_examples-master" Folder
 
 - **Purpose**: Reference implementations from LazyProgrammer's course containing reusable Python modules
-- **Usage**: Import `.py` files from here into `Bayes Test/` notebooks for demonstrations
+- **Usage**: Import `.py` files from here into `Py notebook/` notebooks for demonstrations
 - **VS Code Config**: Intentionally excluded from search (`.vscode/settings.json`) to reduce noise
-- **Pattern**: `Bayes Test/` notebooks import functions/classes from `machine_learning_examples-master/` to show practical use cases
+- **Pattern**: `Py notebook/` notebooks import functions/classes from `machine_learning_examples-master/` to show practical use cases
 
 **Workflow Example**:
 ```python
-# In Bayes Test/demo.ipynb
+# In Py notebook/demo.ipynb
 import sys
 sys.path.append('../machine_learning_examples-master')
 from naive_bayes.spam_detector import SpamClassifier
@@ -146,7 +146,7 @@ import seaborn as sns
 
 **CRITICAL**: All notebooks with matplotlib visualizations containing Thai text MUST configure fonts properly to avoid displaying squares instead of Thai characters.
 
-**Standard font setup for `Bayes Test/` notebooks**:
+**Standard font setup for `Py notebook/` notebooks**:
 
 ```python
 import matplotlib.pyplot as plt
@@ -168,8 +168,8 @@ print(f"✅ ตั้งค่า Font ภาษาไทยเป็น '{font_
 ```
 
 **Path adjustments by notebook location**:
-- `Bayes Test/ab_testing/*.ipynb` → use `'../../font/Prompt/Prompt-Regular.ttf'`
-- `Bayes Test/*.ipynb` → use `'../font/Prompt/Prompt-Regular.ttf'`
+- `Py notebook/ab_testing/*.ipynb` → use `'../../font/Prompt/Prompt-Regular.ttf'`
+- `Py notebook/*.ipynb` → use `'../font/Prompt/Prompt-Regular.ttf'`
 
 **Key points**:
 - Use `fm.fontManager.addfont()` to register the font file - this is essential
@@ -261,5 +261,5 @@ Student success indicators (from curriculum):
 - `theory/*.md`: Technical but clear, math-heavy, include examples
 - `implementations/*.md`: Heavy comments, beginner-friendly code
 - `experiments/*.md`: Structured templates with example entries
-- `Bayes Test/**`: Preserve Thai/English mix, add context headers
+- `Py notebook/**`: Preserve Thai/English mix, add context headers
 - `.github/instructions/**`: Technical reference for AI agents

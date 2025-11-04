@@ -1,4 +1,4 @@
-# Dependencies for Bayes Test Notebooks
+# Dependencies for Py notebook Notebooks
 # Python 3.13.1
 
 # Core Scientific Computing
