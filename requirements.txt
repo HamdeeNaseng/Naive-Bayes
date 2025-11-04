@@ -1,9 +1,10 @@
-# Dependencies for Naive Bayes Jupyter Notebooks
+# Dependencies for Naive Bayes Learning Repository
 # Python 3.13.1
 # Last updated: 2025-11-04
 # 
-# This file contains all required libraries found in .ipynb notebooks
-# across the entire project
+# This file contains all required libraries found in:
+# - Jupyter notebooks (*.ipynb) in Jupyter notebook/ directory
+# - Python scripts (*.py) in machine_learning_examples-master/ directory
 
 # ============================================================================
 # CORE SCIENTIFIC COMPUTING
@@ -41,6 +42,35 @@ notebook>=7.0.0        # Jupyter Notebook interface
 jupyterlab>=4.0.0      # JupyterLab interface (optional but recommended)
 
 # ============================================================================
+# NATURAL LANGUAGE PROCESSING (NLP)
+# ============================================================================
+nltk>=3.8.0            # Natural Language Toolkit
+                       # Used in: NLP notebooks, text processing
+
+# ============================================================================
+# DEEP LEARNING - PYTORCH (Optional - for PyTorch examples)
+# ============================================================================
+# torch>=2.1.0         # PyTorch deep learning framework (uncomment if needed)
+# torchvision>=0.16.0  # Computer vision datasets and models for PyTorch
+
+# ============================================================================
+# REINFORCEMENT LEARNING (Optional - for RL examples)
+# ============================================================================
+# gym>=0.26.0          # OpenAI Gym - RL environments (uncomment if needed)
+# gymnasium>=0.29.0    # Gymnasium (modern fork of OpenAI Gym)
+
+# ============================================================================
+# OPTIMIZATION (Optional - for optimization examples)
+# ============================================================================
+# pulp>=2.7.0          # Linear programming toolkit (uncomment if needed)
+
+# ============================================================================
+# WEB FRAMEWORK (Optional - for web server examples)
+# ============================================================================
+# flask>=3.0.0         # Lightweight web framework (uncomment if needed)
+# requests>=2.31.0     # HTTP library for API calls
+
+# ============================================================================
 # UTILITIES
 # ============================================================================
 tqdm>=4.66.0           # Progress bars for loops
@@ -48,18 +78,49 @@ tqdm>=4.66.0           # Progress bars for loops
 # ============================================================================
 # NOTES:
 # ============================================================================
-# - urllib: Built-in Python library (no installation needed)
-# - os: Built-in Python library (no installation needed)
-# - All notebooks use Thai fonts (Prompt-Regular.ttf) located in font/ directory
+# Built-in Python libraries (no installation needed):
+# - urllib, os, sys, pickle, json, argparse, re, itertools, glob
+# - wave, string, random, datetime
 # 
-# Notebooks using specific libraries:
-# - gaussian naive bayes/*.ipynb: numpy, pandas, matplotlib, sklearn, keras
-# - ab_testing/*.ipynb: numpy, pandas, matplotlib, scipy.stats
-# - ann_class/*.ipynb: numpy, matplotlib, tensorflow, sklearn
-# - airline/*.ipynb: numpy, pandas, matplotlib, sklearn
+# Optional/Deprecated libraries NOT included:
+# - theano: Deprecated, no longer maintained
+# - cntk: Microsoft Cognitive Toolkit (deprecated)
+# - future: Only needed for Python 2/3 compatibility
+# 
+# All notebooks use Thai fonts (Prompt-Regular.ttf) located in font/ directory
+# 
+# Library usage statistics (from scan):
+# - numpy: 402 imports (core library)
+# - matplotlib: 326 imports (visualization)
+# - sklearn: 86+ imports (machine learning)
+# - pandas: 80 imports (data manipulation)
+# - tensorflow: 57 imports (deep learning)
+# - keras: 45+ imports (neural networks)
+# - gym: 46 imports (reinforcement learning)
+# - scipy: 36+ imports (scientific computing)
+# - torch: 10 imports (PyTorch)
+# - nltk: 7 imports (NLP)
+# 
+# Directory structure:
+# - Jupyter notebook/: Interactive notebooks with Thai documentation
+# - machine_learning_examples-master/: Reference Python implementations
+#   - naive_bayes/: Naive Bayes examples
+#   - ab_testing/: A/B testing and Bayesian statistics
+#   - ann_class/: Artificial Neural Networks
+#   - cnn_class/: Convolutional Neural Networks
+#   - rnn_class/: Recurrent Neural Networks
+#   - nlp_class/: Natural Language Processing
+#   - rl/rl2/rl3/: Reinforcement Learning
+#   - And many more...
 # 
 # Installation:
 #   pip install -r requirements.txt
 # 
+# Install optional packages (uncomment in file first):
+#   pip install torch gymnasium pulp flask requests
+# 
 # Update all packages:
 #   pip install --upgrade -r requirements.txt
+# 
+# For TensorFlow GPU support (optional):
+#   pip install tensorflow[and-cuda]  # For NVIDIA GPU
